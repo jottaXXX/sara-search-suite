@@ -89,6 +89,7 @@ function Home() {
           </div>
           <Link
             to="/comprar"
+            search={{}}
             className="text-sm text-muted-foreground underline decoration-gold decoration-2 underline-offset-4 hover:text-foreground"
           >
             Ver todos os imóveis

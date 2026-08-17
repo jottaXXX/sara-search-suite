@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ListingPage } from "@/components/ListingPage";
 
 export const Route = createFileRoute("/comprar")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    tipo: typeof search.tipo === "string" ? search.tipo : "Todos",
-    local: typeof search.local === "string" ? search.local : "",
+  validateSearch: (search: Record<string, unknown>): { tipo?: string; local?: string } => ({
+    tipo: typeof search["tipo"] === "string" ? (search["tipo"] as string) : undefined,
+    local: typeof search["local"] === "string" ? (search["local"] as string) : undefined,
   }),
   head: () => ({
     meta: [
@@ -34,8 +34,8 @@ function Comprar() {
       eyebrow="Comprar"
       title="Imóveis à venda"
       description="Seleção de imóveis prontos para morar ou investir, com documentação verificada e assessoria completa na negociação."
-      tipo={tipo}
-      local={local}
+      tipo={tipo ?? "Todos"}
+      local={local ?? ""}
     />
   );
 }

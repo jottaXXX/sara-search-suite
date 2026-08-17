@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlugarRouteImport } from './routes/alugar'
+import { Route as AvaliacaoRouteImport } from './routes/avaliacao'
+import { Route as ComprarRouteImport } from './routes/comprar'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as QuemSomosRouteImport } from './routes/quem-somos'
+import { Route as ImovelIdRouteImport } from './routes/imovel.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlugarRoute = AlugarRouteImport.update({
+  id: '/alugar',
+  path: '/alugar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvaliacaoRoute = AvaliacaoRouteImport.update({
+  id: '/avaliacao',
+  path: '/avaliacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComprarRoute = ComprarRouteImport.update({
+  id: '/comprar',
+  path: '/comprar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuemSomosRoute = QuemSomosRouteImport.update({
+  id: '/quem-somos',
+  path: '/quem-somos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImovelIdRoute = ImovelIdRouteImport.update({
+  id: '/imovel/$id',
+  path: '/imovel/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alugar': typeof AlugarRoute
+  '/avaliacao': typeof AvaliacaoRoute
+  '/comprar': typeof ComprarRoute
+  '/contato': typeof ContatoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alugar': typeof AlugarRoute
+  '/avaliacao': typeof AvaliacaoRoute
+  '/comprar': typeof ComprarRoute
+  '/contato': typeof ContatoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alugar': typeof AlugarRoute
+  '/avaliacao': typeof AvaliacaoRoute
+  '/comprar': typeof ComprarRoute
+  '/contato': typeof ContatoRoute
+  '/quem-somos': typeof QuemSomosRoute
+  '/imovel/$id': typeof ImovelIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alugar'
+    | '/avaliacao'
+    | '/comprar'
+    | '/contato'
+    | '/quem-somos'
+    | '/imovel/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alugar'
+    | '/avaliacao'
+    | '/comprar'
+    | '/contato'
+    | '/quem-somos'
+    | '/imovel/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/alugar'
+    | '/avaliacao'
+    | '/comprar'
+    | '/contato'
+    | '/quem-somos'
+    | '/imovel/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlugarRoute: typeof AlugarRoute
+  AvaliacaoRoute: typeof AvaliacaoRoute
+  ComprarRoute: typeof ComprarRoute
+  ContatoRoute: typeof ContatoRoute
+  QuemSomosRoute: typeof QuemSomosRoute
+  ImovelIdRoute: typeof ImovelIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alugar': {
+      id: '/alugar'
+      path: '/alugar'
+      fullPath: '/alugar'
+      preLoaderRoute: typeof AlugarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/avaliacao': {
+      id: '/avaliacao'
+      path: '/avaliacao'
+      fullPath: '/avaliacao'
+      preLoaderRoute: typeof AvaliacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comprar': {
+      id: '/comprar'
+      path: '/comprar'
+      fullPath: '/comprar'
+      preLoaderRoute: typeof ComprarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quem-somos': {
+      id: '/quem-somos'
+      path: '/quem-somos'
+      fullPath: '/quem-somos'
+      preLoaderRoute: typeof QuemSomosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/imovel/$id': {
+      id: '/imovel/$id'
+      path: '/imovel/$id'
+      fullPath: '/imovel/$id'
+      preLoaderRoute: typeof ImovelIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlugarRoute: AlugarRoute,
+  AvaliacaoRoute: AvaliacaoRoute,
+  ComprarRoute: ComprarRoute,
+  ContatoRoute: ContatoRoute,
+  QuemSomosRoute: QuemSomosRoute,
+  ImovelIdRoute: ImovelIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

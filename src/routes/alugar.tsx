@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ListingPage } from "@/components/ListingPage";
 
 export const Route = createFileRoute("/alugar")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    tipo: typeof search.tipo === "string" ? search.tipo : "Todos",
-    local: typeof search.local === "string" ? search.local : "",
+  validateSearch: (search: Record<string, unknown>): { tipo?: string; local?: string } => ({
+    tipo: typeof search["tipo"] === "string" ? (search["tipo"] as string) : undefined,
+    local: typeof search["local"] === "string" ? (search["local"] as string) : undefined,
   }),
   head: () => ({
     meta: [
@@ -34,8 +34,8 @@ function Alugar() {
       eyebrow="Alugar"
       title="Imóveis para locação"
       description="Opções residenciais e comerciais avaliadas de perto, com contrato seguro e suporte durante toda a locação."
-      tipo={tipo}
-      local={local}
+      tipo={tipo ?? "Todos"}
+      local={local ?? ""}
     />
   );
 }
