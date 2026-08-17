@@ -49,35 +49,36 @@ function Home() {
 
   return (
     <div>
-      <section className="relative">
-        <img
-          src={heroImage}
-          alt="Varanda sofisticada de apartamento de alto padrão ao pôr do sol"
-          width={1920}
-          height={1280}
-          className="h-[78vh] min-h-[520px] w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/25 to-foreground/10" />
+      <section>
+        <div className="relative">
+          <img
+            src={heroImage}
+            alt="Varanda sofisticada de apartamento de alto padrão ao pôr do sol"
+            width={1920}
+            height={1280}
+            className="h-[78vh] min-h-[520px] w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/25 to-foreground/15" />
 
-        <div className="absolute inset-x-0 top-16 mx-auto max-w-6xl px-4 md:top-24 md:px-6">
-          <p className="text-[0.7rem] tracking-[0.32em] uppercase text-gold-soft">
-            Consultoria imobiliária · Timon · Teresina
-          </p>
-          <h1 className="mt-4 max-w-xl font-serif text-4xl leading-[1.05] text-background md:text-6xl">
-            Sua Próxima Conquista Começa Aqui.
-          </h1>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-background/85 md:text-base">
-            Um portfólio enxuto e criterioso, com acompanhamento pessoal em cada etapa da compra, da
-            locação e da avaliação do seu imóvel.
-          </p>
-        </div>
-
-        <div className="mx-auto -mt-28 max-w-6xl px-4 pb-4 md:-mt-24 md:px-6">
-          <div className="relative">
-            <SearchBar />
+          <div className="absolute inset-x-0 top-14 mx-auto max-w-6xl px-4 md:top-24 md:px-6">
+            <p className="text-[0.7rem] tracking-[0.32em] uppercase text-gold-soft">
+              Consultoria imobiliária · Timon · Teresina
+            </p>
+            <h1 className="mt-4 max-w-xl font-serif text-4xl leading-[1.05] text-background md:text-6xl">
+              Sua Próxima Conquista Começa Aqui.
+            </h1>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-background/85 md:text-base">
+              Um portfólio enxuto e criterioso, com acompanhamento pessoal em cada etapa da compra,
+              da locação e da avaliação do seu imóvel.
+            </p>
           </div>
         </div>
+
+        <div className="relative z-10 mx-auto -mt-24 max-w-6xl px-4 md:px-6">
+          <SearchBar />
+        </div>
       </section>
+
 
       <section className="mx-auto max-w-6xl px-4 py-16 md:px-6">
         <div className="flex flex-wrap items-end justify-between gap-4">
