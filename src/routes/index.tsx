@@ -58,7 +58,7 @@ function Home() {
             height={1280}
             className="h-[78vh] min-h-[520px] w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/25 to-foreground/15" />
+          <div className="absolute inset-0 bg-gradient-to-b from-foreground/55 via-foreground/20 to-foreground/5" />
 
           <div className="absolute inset-x-0 top-14 mx-auto max-w-6xl px-4 md:top-24 md:px-6">
             <p className="text-[0.7rem] tracking-[0.32em] uppercase text-gold-soft">
