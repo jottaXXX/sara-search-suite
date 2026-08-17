@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ListingPage } from "@/components/ListingPage";
 
 export const Route = createFileRoute("/alugar")({
-  validateSearch: (search: Record<string, unknown>): { tipo?: string; local?: string } => ({
+  validateSearch: (search: Record<string, unknown>): { tipo?: string | undefined; local?: string | undefined } => ({
     tipo: typeof search["tipo"] === "string" ? (search["tipo"] as string) : undefined,
     local: typeof search["local"] === "string" ? (search["local"] as string) : undefined,
   }),
